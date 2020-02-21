@@ -46,13 +46,13 @@ function initPlayers () {
             pic: 'http://static.smartisanos.cn/pr/img/video/video_03_cc87ce5bdb.jpg',
             thumbnails: 'http://static.smartisanos.cn/pr/img/video/video_03_cc87ce5bdb.jpg'
         },
-        subtitle: {
-            url: 'subtitle test'
-        },
-        danmaku: {
-            id: '9E2E3368B56CDBB4',
-            api: 'https://api.prprpr.me/dplayer/'
-        }
+        // subtitle: {
+        //     url: 'subtitle test'
+        // },
+        // danmaku: {
+        //     id: '9E2E3368B56CDBB4',
+        //     api: 'https://api.prprpr.me/dplayer/'
+        // }
     });
     // dp1
     window.dp1 = new DPlayer({
@@ -64,16 +64,17 @@ function initPlayers () {
             pic: 'https://i.loli.net/2019/06/06/5cf8c5d9c57b510947.png',
             thumbnails: 'https://i.loli.net/2019/06/06/5cf8c5d9cec8510758.jpg'
         },
-        subtitle: {
-            url: 'https://moeplayer.b0.upaiyun.com/dplayer/hikarunara.vtt'
-        },
-        danmaku: {
-            id: '9E2E3368B56CDBB4',
-            api: 'https://api.prprpr.me/dplayer/',
-            addition: ['https://cn-south-17-dplayer-49648867.oss.dogecdn.com/1678963.json']
-        }
+        watermark: 'hi rcz'
+        // subtitle: {
+        //     url: 'https://moeplayer.b0.upaiyun.com/dplayer/hikarunara.vtt'
+        // },
+        // danmaku: {
+        //     id: '9E2E3368B56CDBB4',
+        //     api: 'https://api.prprpr.me/dplayer/',
+        //     addition: ['https://cn-south-17-dplayer-49648867.oss.dogecdn.com/1678963.json']
+        // }
     });
-
+    window.dp1.watermark('huoshenshan go go go')
     // dp2
     window.dp2 = new DPlayer({
         container: document.getElementById('dplayer2'),
@@ -87,7 +88,8 @@ function initPlayers () {
         volume: 0.2,
         mutex: true,
         video: {
-            url: 'https://api.dogecloud.com/player/get.mp4?vcode=5ac682e6f8231991&userId=17&ext=.mp4',
+            url: 'https://apk.sfsctech.com/media/huoshenshan.mp4', 
+            // 'https://api.dogecloud.com/player/get.mp4?vcode=5ac682e6f8231991&userId=17&ext=.mp4',
             pic: 'https://i.loli.net/2019/06/06/5cf8c5d9c57b510947.png',
             thumbnails: 'https://i.loli.net/2019/06/06/5cf8c5d9cec8510758.jpg',
             type: 'auto'

@@ -1,0 +1,14 @@
+.dplayer-watermark {
+    position: absolute;
+    top: 40%;
+    width: 90%;
+    height: 30px;
+    left: 5%;
+    text-align: left;
+    color: #ff0000;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+    font-size: 1rem;
+    // &.dplayer-watermark-hide {
+    //     display: none;
+    // }
+}

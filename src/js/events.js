@@ -41,6 +41,8 @@ class Events {
             'contextmenu_hide',
             'notice_show',
             'notice_hide',
+            'watermark_show',
+            'watermark_hide',
             'quality_start',
             'quality_end',
             'destroy',

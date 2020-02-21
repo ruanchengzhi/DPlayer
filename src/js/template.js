@@ -23,6 +23,7 @@ class Template {
                 preload: this.options.preload,
                 url: this.options.video.url,
                 subtitle: this.options.subtitle,
+                watermark: this.options.watermark,
             },
         });
 
@@ -78,6 +79,7 @@ class Template {
         this.subtitleButton = this.container.querySelector('.dplayer-subtitle-icon');
         this.subtitleButtonInner = this.container.querySelector('.dplayer-subtitle-icon .dplayer-icon-content');
         this.subtitle = this.container.querySelector('.dplayer-subtitle');
+        this.watermark = this.container.querySelector('.dplayer-watermark');
         this.qualityButton = this.container.querySelector('.dplayer-quality-icon');
         this.barPreview = this.container.querySelector('.dplayer-bar-preview');
         this.barWrap = this.container.querySelector('.dplayer-bar-wrap');

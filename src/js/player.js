@@ -10,6 +10,7 @@ import Events from './events';
 import FullScreen from './fullscreen';
 import User from './user';
 import Subtitle from './subtitle';
+import Watermark from './watermark';
 import Bar from './bar';
 import Timer from './timer';
 import Bezel from './bezel';
@@ -42,7 +43,6 @@ class DPlayer {
         this.events = new Events();
         this.user = new User(this);
         this.container = this.options.container;
-
         this.container.classList.add('dplayer');
         if (!this.options.danmaku) {
             this.container.classList.add('dplayer-no-danmaku');
@@ -63,6 +63,7 @@ class DPlayer {
             options: this.options,
             index: index,
             tran: this.tran,
+            watermark: this.options.watermark,
         });
 
         this.video = this.template.video;
@@ -516,6 +517,11 @@ class DPlayer {
                 this.subtitle.hide();
             }
         }
+        this.Watermark = new Watermark(this.template.watermark, this.video, this.options.watermark, this.events);
+        if (!this.user.get('watermark')) {
+            console.log('watermark hide');
+            this.Watermark.hide();
+        }
     }
 
     switchQuality(index) {
@@ -581,6 +587,15 @@ class DPlayer {
                 this.events.trigger('notice_hide');
             }, time);
         }
+    }
+
+    watermark(text) {
+        console.log('call watermark ' + text);
+        this.template.watermark.innerHTML = text;
+        this.template.options.watermark = text;
+        this.options.watermark = text;
+        console.dir(this.options);
+        this.events.trigger('watermark_show', text);
     }
 
     resize() {

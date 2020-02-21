@@ -10,6 +10,9 @@
         <div class="dplayer-danmaku-item dplayer-danmaku-item--demo"></div>
     </div>
     <div class="dplayer-subtitle"></div>
+    <div class="dplayer-watermark">
+        <span >{{options.watermark}}</span>
+    </div>
     <div class="dplayer-bezel">
         <span class="dplayer-bezel-icon"></span>
         {{ if options.danmaku }}

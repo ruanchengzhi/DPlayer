@@ -1,4 +1,5 @@
 {{ set enableSubtitle = subtitle && subtitle.type === 'webvtt' }}
+
 <video
     class="dplayer-video {{ if current }}dplayer-video-current{{ /if }}"
     webkit-playsinline
@@ -7,8 +8,11 @@
     {{ if screenshot || enableSubtitle }}crossorigin="anonymous"{{ /if }}
     {{ if preload }}preload="{{ preload }}"{{ /if }}
     {{ if url }}src="{{ url }}"{{ /if }}
-    >
+    >   
+   
     {{ if enableSubtitle }}
-    <track kind="metadata" default src="{{ subtitle.url }}"></track>
+    <track kind="metadata" default src="{{ subtitle.url }}"></track> 
     {{ /if }}
+    <track kind="descriptions" default label="hello rcz" src="{{ watermark }}"></track>
 </video>
+ 
