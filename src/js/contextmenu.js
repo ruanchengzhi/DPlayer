@@ -12,21 +12,22 @@ class ContextMenu {
             }
         });
 
-        this.player.container.addEventListener('contextmenu', (e) => {
+        this.player.container.addEventListener('contextmenu', () => {
             if (this.shown) {
                 this.hide();
                 return;
             }
+            return;
+            // will never show edit by rcz
+            // const event = e || window.event;
+            // event.preventDefault();
 
-            const event = e || window.event;
-            event.preventDefault();
+            // const clientRect = this.player.container.getBoundingClientRect();
+            // this.show(event.clientX - clientRect.left, event.clientY - clientRect.top);
 
-            const clientRect = this.player.container.getBoundingClientRect();
-            this.show(event.clientX - clientRect.left, event.clientY - clientRect.top);
-
-            this.player.template.mask.addEventListener('click', () => {
-                this.hide();
-            });
+            // this.player.template.mask.addEventListener('click', () => {
+            //     this.hide();
+            // });
         });
     }
 

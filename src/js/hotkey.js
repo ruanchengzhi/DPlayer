@@ -49,6 +49,13 @@ class HotKey {
                     break;
             }
         });
+        document.addEventListener('backbutton', (e) => {
+            const event = e || window.event;
+            console.log('backbutton :' + event);
+            if (player.fullScreen.isFullScreen('browser')) {
+                player.fullScreen.cancel('browser');
+            }
+        });
     }
 }
 

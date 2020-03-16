@@ -17,6 +17,13 @@ class FullScreen {
             if (this.isFullScreen('browser')) {
                 this.player.events.trigger('fullscreen');
             } else {
+                // add by rcz
+                console.log('will cancel fullscreen');
+                if (document.webkitCancelFullScreen) {
+                    document.webkitCancelFullScreen();
+                    this.player.container.classList.remove('dplayer-fulled');
+                }
+                console.log('fullscreenchange : ' + JSON.stringify(this.lastScrollPosition));
                 utils.setScrollPosition(this.lastScrollPosition);
                 this.player.events.trigger('fullscreen_cancel');
             }
@@ -30,6 +37,7 @@ class FullScreen {
             if (fullEle) {
                 this.player.events.trigger('fullscreen');
             } else {
+                console.log('docfullscreenchange : ' + this.lastScrollPosition);
                 utils.setScrollPosition(this.lastScrollPosition);
                 this.player.events.trigger('fullscreen_cancel');
             }
@@ -61,21 +69,31 @@ class FullScreen {
             this.lastScrollPosition = utils.getScrollPosition();
         }
 
+        console.log('browser fullscreen');
         switch (type) {
             case 'browser':
                 if (this.player.container.requestFullscreen) {
+                    console.log('1');
                     this.player.container.requestFullscreen();
+                    this.player.container.classList.add('dplayer-fulled');
+                    // console.dir(this.player.container);
                 } else if (this.player.container.mozRequestFullScreen) {
+                    console.log('2');
                     this.player.container.mozRequestFullScreen();
                 } else if (this.player.container.webkitRequestFullscreen) {
+                    console.log('3');
                     this.player.container.webkitRequestFullscreen();
+                    this.player.container.classList.add('dplayer-fulled');
                 } else if (this.player.video.webkitEnterFullscreen) {
                     // Safari for iOS
                     this.player.video.webkitEnterFullscreen();
+                    console.log('4');
                 } else if (this.player.video.webkitEnterFullScreen) {
                     this.player.video.webkitEnterFullScreen();
+                    console.log('5');
                 } else if (this.player.container.msRequestFullscreen) {
                     this.player.container.msRequestFullscreen();
+                    console.log('6');
                 }
                 break;
             case 'web':
@@ -94,16 +112,24 @@ class FullScreen {
         switch (type) {
             case 'browser':
                 if (document.cancelFullScreen) {
+                    console.log('cancel 1');
                     document.cancelFullScreen();
+                    this.player.container.classList.remove('dplayer-fulled');
                 } else if (document.mozCancelFullScreen) {
+                    console.log('cancel 2');
                     document.mozCancelFullScreen();
                 } else if (document.webkitCancelFullScreen) {
+                    console.log('cancel 3');
+                    this.player.container.classList.remove('dplayer-fulled');
                     document.webkitCancelFullScreen();
                 } else if (document.webkitCancelFullscreen) {
+                    console.log('cancel 4');
                     document.webkitCancelFullscreen();
                 } else if (document.msCancelFullScreen) {
+                    console.log('cancel 5');
                     document.msCancelFullScreen();
                 } else if (document.msExitFullscreen) {
+                    console.log('cancel 6');
                     document.msExitFullscreen();
                 }
                 break;

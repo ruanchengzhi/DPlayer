@@ -342,6 +342,7 @@
             }
             &.dplayer-setting-icon {
                 padding-top: 8.5px;
+                display: none;
             }
             &.dplayer-volume-icon {
                 width: 43px;
@@ -411,6 +412,7 @@
         .dplayer-setting {
             display: inline-block;
             height: 100%;
+            display: none;
             .dplayer-setting-box {
                 position: absolute;
                 right: 0;

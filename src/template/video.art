@@ -13,6 +13,5 @@
     {{ if enableSubtitle }}
     <track kind="metadata" default src="{{ subtitle.url }}"></track> 
     {{ /if }}
-    <track kind="descriptions" default label="hello rcz" src="{{ watermark }}"></track>
 </video>
  

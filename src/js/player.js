@@ -187,9 +187,11 @@ class DPlayer {
         this.template.playButton.innerHTML = Icons.pause;
 
         const playedPromise = Promise.resolve(this.video.play());
+        const that = this;
         playedPromise
-            .catch(() => {
-                this.pause();
+            .catch(function(events) {
+                that.pause();
+                console.dir(events);
             })
             .then(() => {});
         this.timer.enable('loading');
@@ -466,7 +468,7 @@ class DPlayer {
                 // Not a video load error, may be poster load failed, see #307
                 return;
             }
-            this.tran && this.notice && this.type !== 'webtorrent' && this.notice(this.tran('Video load failed'), -1);
+            this.tran && this.notice && this.type !== 'webtorrent' && this.notice(this.tran('Failed to play video'), -1);
         });
 
         // video end

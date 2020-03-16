@@ -58,9 +58,11 @@ function initPlayers () {
     window.dp1 = new DPlayer({
         container: document.getElementById('dplayer1'),
         preload: 'none',
-        screenshot: true,
+        screenshot: false,
         video: {
-            url: 'https://api.dogecloud.com/player/get.mp4?vcode=5ac682e6f8231991&userId=17&ext=.mp4',
+            // url: 'https://api.dogecloud.com/player/get.mp4?vcode=5ac682e6f8231991&userId=17&ext=.mp4',
+            url: 'https://media-cast.shanghaidisneyresort.com.cn/customerTrans/541dd1c21c9039c234235f1617c7beed/f965d95-170aa5483a5-0004-33ce-3f7-70968.mp4',
+            // url: 'http://media-cast.shanghaidisneyresort.com.cn/sv/71c61d0-1707b877795/71c61d0-1707b877795.mov',
             pic: 'https://i.loli.net/2019/06/06/5cf8c5d9c57b510947.png',
             thumbnails: 'https://i.loli.net/2019/06/06/5cf8c5d9cec8510758.jpg'
         },
@@ -82,6 +84,7 @@ function initPlayers () {
         autoplay: false,
         theme: '#FADFA3',
         loop: true,
+        lang: 'en',
         screenshot: true,
         hotkey: true,
         logo: 'https://i.loli.net/2019/06/06/5cf8c5d94521136430.png',
@@ -117,7 +120,9 @@ function initPlayers () {
             }
         ]
     });
-
+    dp2.on('error', function () {
+        console.log('dp2 error' );
+    });
     const events = [
         'abort', 'canplay', 'canplaythrough', 'durationchange', 'emptied', 'ended', 'error',
         'loadeddata', 'loadedmetadata', 'loadstart', 'mozaudioavailable', 'pause', 'play',

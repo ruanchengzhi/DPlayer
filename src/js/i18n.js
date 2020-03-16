@@ -38,6 +38,7 @@ const tranTxt = {
         'Set danmaku type': '设置弹幕类型',
         'Show danmaku': '显示弹幕',
         'Video load failed': '视频加载失败',
+        'Failed to play video': '视频播放失败',
         'Danmaku load failed': '弹幕加载失败',
         'Danmaku send failed': '弹幕发送失败',
         'Switching to': '正在切换至',
