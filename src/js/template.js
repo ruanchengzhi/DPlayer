@@ -80,6 +80,8 @@ class Template {
         this.subtitleButtonInner = this.container.querySelector('.dplayer-subtitle-icon .dplayer-icon-content');
         this.subtitle = this.container.querySelector('.dplayer-subtitle');
         this.watermark = this.container.querySelector('.dplayer-watermark');
+        this.watermark1 = this.container.querySelector('.watermark1');
+        this.watermark2 = this.container.querySelector('.watermark2');
         this.qualityButton = this.container.querySelector('.dplayer-quality-icon');
         this.barPreview = this.container.querySelector('.dplayer-bar-preview');
         this.barWrap = this.container.querySelector('.dplayer-bar-wrap');

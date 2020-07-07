@@ -61,7 +61,8 @@ function initPlayers () {
         screenshot: false,
         video: {
             // url: 'https://api.dogecloud.com/player/get.mp4?vcode=5ac682e6f8231991&userId=17&ext=.mp4',
-            url: 'https://media-cast.shanghaidisneyresort.com.cn/customerTrans/541dd1c21c9039c234235f1617c7beed/f965d95-170aa5483a5-0004-33ce-3f7-70968.mp4',
+            url: 'https://media-cast.shanghaidisneyresort.com.cn/e498dc686eb44a1693467f98333667fd/d43d05c2a8f649df9a7b7c2beedade8e-336e24b1b62e0d00222926c48cc524a0-fd.mp4',
+            // url: 'https://media-cast.shanghaidisneyresort.com.cn/93a7abc7838b4460a6fd9aba19ffc459/43bae3049d064444ac2242be7295488c-58c12bace268ff2c9b9f201197d30047-fd.mp4',
             // url: 'http://media-cast.shanghaidisneyresort.com.cn/sv/71c61d0-1707b877795/71c61d0-1707b877795.mov',
             pic: 'https://i.loli.net/2019/06/06/5cf8c5d9c57b510947.png',
             thumbnails: 'https://i.loli.net/2019/06/06/5cf8c5d9cec8510758.jpg'
@@ -76,7 +77,8 @@ function initPlayers () {
         //     addition: ['https://cn-south-17-dplayer-49648867.oss.dogecdn.com/1678963.json']
         // }
     });
-    window.dp1.watermark('huoshenshan go go go')
+    // window.dp1.watermark('12345678 <br>Zhuangzhuang Zhang<br>2020-05-26')
+    window.dp1.watermark('01236785 <br>Yuankai-ka Zhu<br>2020-05-28')
     // dp2
     window.dp2 = new DPlayer({
         container: document.getElementById('dplayer2'),
@@ -91,7 +93,8 @@ function initPlayers () {
         volume: 0.2,
         mutex: true,
         video: {
-            url: 'https://apk.sfsctech.com/media/huoshenshan.mp4', 
+            // url: 'https://apk.sfsctech.com/media/huoshenshan.mp4', 
+             url: 'https://media-cast.shanghaidisneyresort.com.cn/93a7abc7838b4460a6fd9aba19ffc459/43bae3049d064444ac2242be7295488c-58c12bace268ff2c9b9f201197d30047-fd.mp4',
             // 'https://api.dogecloud.com/player/get.mp4?vcode=5ac682e6f8231991&userId=17&ext=.mp4',
             pic: 'https://i.loli.net/2019/06/06/5cf8c5d9c57b510947.png',
             thumbnails: 'https://i.loli.net/2019/06/06/5cf8c5d9cec8510758.jpg',

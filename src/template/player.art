@@ -11,7 +11,9 @@
     </div>
     <div class="dplayer-subtitle"></div>
     <div class="dplayer-watermark">
-        <span >{{options.watermark}}</span>
+          <span class ='watermark1'>{{options.watermark}}</span>
+
+          <span class ='watermark2'>{{options.watermark}}</span>
     </div>
     <div class="dplayer-bezel">
         <span class="dplayer-bezel-icon"></span>
@@ -195,11 +197,11 @@
             </div>
         </div>
         <div class="dplayer-full">
-          {{ if options.live }}
+           {{ if options.live }}
             <button class="dplayer-icon dplayer-full-in-icon" data-balloon="{{ tran('Web full screen') }}" data-balloon-pos="up">
                 <span class="dplayer-icon-content">{{@ icons.fullWeb }}</span>
             </button>
-             {{ /if }}
+            {{ /if }}
             <button class="dplayer-icon dplayer-full-icon" data-balloon="{{ tran('Full screen') }}" data-balloon-pos="up">
                 <span class="dplayer-icon-content">{{@ icons.full }}</span>
             </button>

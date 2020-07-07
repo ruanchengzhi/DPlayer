@@ -207,6 +207,16 @@ class DPlayer {
                 }
             }
         }
+        // add by rcz
+        if (this.video.videoWidth < this.video.videoHeight) {
+            this.container.classList.add('wildeplayer-watermark');
+            this.template.watermark1.classList.add('wildeplayer');
+            this.template.watermark2.classList.add('wildeplayer');
+        } else {
+            this.container.classList.remove('wildeplayer-watermark');
+            this.template.watermark1.classList.remove('wildeplayer');
+            this.template.watermark2.classList.remove('wildeplayer');
+        }
     }
 
     /**
@@ -490,7 +500,19 @@ class DPlayer {
                 this.play();
             }
         });
-
+        this.on('loadeddata', () => {
+            console.log('on loadeddata');
+            // add by rcz
+            if (this.video.videoWidth < this.video.videoHeight) {
+                this.container.classList.add('wildeplayer-watermark');
+                this.template.watermark1.classList.add('wildeplayer');
+                this.template.watermark2.classList.add('wildeplayer');
+            } else {
+                this.container.classList.remove('wildeplayer-watermark');
+                this.template.watermark1.classList.remove('wildeplayer');
+                this.template.watermark2.classList.remove('wildeplayer');
+            }
+        });
         this.on('pause', () => {
             if (!this.paused) {
                 this.pause();
@@ -593,10 +615,21 @@ class DPlayer {
 
     watermark(text) {
         console.log('call watermark ' + text);
-        this.template.watermark.innerHTML = text;
+        this.template.watermark1.innerHTML = text;
+        this.template.watermark2.innerHTML = text;
         this.template.options.watermark = text;
         this.options.watermark = text;
-        console.dir(this.options);
+        // console.dir(this.options);
+        // add by rcz
+        if (this.video.videoWidth < this.video.videoHeight) {
+            this.container.classList.add('wildeplayer-watermark');
+            this.template.watermark1.classList.add('wildeplayer');
+            this.template.watermark2.classList.add('wildeplayer');
+        } else {
+            this.container.classList.remove('wildeplayer-watermark');
+            this.template.watermark1.classList.remove('wildeplayer');
+            this.template.watermark2.classList.remove('wildeplayer');
+        }
         this.events.trigger('watermark_show', text);
     }
 

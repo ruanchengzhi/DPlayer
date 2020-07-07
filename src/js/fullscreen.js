@@ -16,12 +16,18 @@ class FullScreen {
             this.player.resize();
             if (this.isFullScreen('browser')) {
                 this.player.events.trigger('fullscreen');
+                // todo watermark
+                this.player.template.watermark1.classList.add('watermark1_full');
+                this.player.template.watermark2.classList.add('watermark2_full');
             } else {
                 // add by rcz
                 console.log('will cancel fullscreen');
                 if (document.webkitCancelFullScreen) {
                     document.webkitCancelFullScreen();
                     this.player.container.classList.remove('dplayer-fulled');
+                    // todo
+                    this.player.template.watermark1.classList.remove('watermark1_full');
+                    this.player.template.watermark2.classList.remove('watermark2_full');
                 }
                 console.log('fullscreenchange : ' + JSON.stringify(this.lastScrollPosition));
                 utils.setScrollPosition(this.lastScrollPosition);
