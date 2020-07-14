@@ -615,22 +615,26 @@ class DPlayer {
 
     watermark(text) {
         console.log('call watermark ' + text);
-        this.template.watermark1.innerHTML = text;
-        this.template.watermark2.innerHTML = text;
-        this.template.options.watermark = text;
-        this.options.watermark = text;
         // console.dir(this.options);
         // add by rcz
         if (this.video.videoWidth < this.video.videoHeight) {
             this.container.classList.add('wildeplayer-watermark');
             this.template.watermark1.classList.add('wildeplayer');
             this.template.watermark2.classList.add('wildeplayer');
-        } else {
+        } else if (this.video.videoWidth >= this.video.videoHeight) {
             this.container.classList.remove('wildeplayer-watermark');
             this.template.watermark1.classList.remove('wildeplayer');
             this.template.watermark2.classList.remove('wildeplayer');
         }
-        this.events.trigger('watermark_show', text);
+        if (this.video.videoWidth) {
+            this.template.watermark1.innerHTML = text;
+            this.template.watermark2.innerHTML = text;
+            this.template.options.watermark = text;
+            this.options.watermark = text;
+            this.events.trigger('watermark_show', text);
+        } else {
+            console.log('isnot playing!');
+        }
     }
 
     resize() {
